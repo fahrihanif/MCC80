@@ -46,11 +46,7 @@ public class Region
             return new List<Region>();
         }
     }
-
-    /*
-     * <summary>digunakan untuk melakukan penambahan record ke database</summary>
-     * <param region>value input yang diperlukan tabel region</param>
-     */
+    
     public int Insert(Region region)
     {
         var connection = Connection.Get();
