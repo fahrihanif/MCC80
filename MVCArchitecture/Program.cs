@@ -19,7 +19,8 @@ public class Program
         Console.WriteLine("5. Locations");
         Console.WriteLine("6. Countries");
         Console.WriteLine("7. Regions");
-        Console.WriteLine("8. Exit");
+        Console.WriteLine("8. LINQ");
+        Console.WriteLine("9. Exit");
         Console.WriteLine("Pilih: ");
 
         try
@@ -70,6 +71,12 @@ public class Program
                     MainMenu();
                     break;
                 case 8:
+                    Console.WriteLine("8. LINQ");
+                    Console.Clear();
+                    MenuLinq();
+                    MainMenu();
+                    break;
+                case 9:
                     Console.WriteLine("8. Exit");
                     Environment.Exit(0);
                     break;
@@ -86,14 +93,23 @@ public class Program
         }
     }
 
+    public static void MenuLinq()
+    {
+        var employee = new Employee();
+        var region = new Region();
+        var country = new Country();
+        var location = new Location();
+        var linq = new LinqController(employee, country, region, location);
+        
+        linq.DetailCountry();
+    }
 
     public static void MenuRegion()
     {
         var region = new Region();
         var vRegion = new VRegion();
         var regionController = new RegionController(region, vRegion);
-
-
+        
         try
         {
             vRegion.Menu();
